@@ -9,7 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/project/blues-replier",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Blueishberry/blues-replier"
 	},
 	"license": "MIT",
 	"icon": "assets/blues-replier/icon.png",
