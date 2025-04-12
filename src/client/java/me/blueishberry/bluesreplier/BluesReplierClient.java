@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.command.argument.MessageArgumentType;
 import net.minecraft.text.Text;
 
 import java.util.regex.Matcher;
@@ -30,7 +29,7 @@ public class BluesReplierClient implements ClientModInitializer {
 
 		ClientCommandRegistrationCallback.EVENT.register(((commandDispatcher, commandRegistryAccess) -> {
 			commandDispatcher.register(ClientCommandManager.literal("r")
-					.then(ClientCommandManager.argument("message", StringArgumentType.string())
+					.then(ClientCommandManager.argument("message", StringArgumentType.greedyString())
 							.executes(context -> {
 								if (lastSender == null) {
 									MinecraftClient.getInstance().player.sendMessage(Text.literal("No one has whispered to you yet."), false);
