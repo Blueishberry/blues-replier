@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "blues-replier",
+	"version": "${version}",
+	"name": "Blue's Replier",
+	"description": "Adds a /r command which makes messaging players easier!",
+	"authors": [
+		"Blueishberry"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/blues-replier",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/blues-replier/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.blueishberry.bluesreplier.BluesReplier"
+		],
+		"client": [
+			"me.blueishberry.bluesreplier.BluesReplierClient"
+		]
+	},
+	"mixins": [
+		"blues-replier.mixins.json",
+		{
+			"config": "blues-replier.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
